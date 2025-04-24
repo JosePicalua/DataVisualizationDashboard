@@ -74,7 +74,7 @@ pip
 Instalación:
 
 Clonar el repositorio:
-git clone https://github.com/tuusuario/tu-repo.git
+git clone https://github.com/JosePicalua/DataVisualizationDashboard
 
 Instalar las dependencias:
 pip install -r requirements.txt
