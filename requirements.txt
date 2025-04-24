@@ -33,7 +33,6 @@ matplotlib-inline==0.1.7
 narwhals==1.35.0
 nbformat==5.10.4
 nest-asyncio==1.6.0
-numpy==2.2.5
 packaging==25.0
 pandas==2.2.3
 parso==0.8.4
@@ -46,7 +45,6 @@ pure_eval==0.2.3
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
 pytz==2025.2
-pywin32==310
 pyzmq==26.4.0
 referencing==0.36.2
 requests==2.32.3
