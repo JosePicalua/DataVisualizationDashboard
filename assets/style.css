@@ -1,0 +1,193 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    border: 1px solid #3b3b3b;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra más prominente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    min-width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.box.selected {
+    background-color: #28a745; /* Verde brillante cuando seleccionado */
+    transform: scale(1.05);
+}
+
+.box.deselected {
+    background-color: #d9534f; /* Marrón brillante cuando no seleccionado */
+    transform: scale(1.05);
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #ffffff; /* Texto blanco */
+}
+
+.output {
+    padding: 10px;
+    background-color: #333333; /* Fondo oscuro para los resultados */
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: #ffffff; /* Texto blanco */
+    font-size: 14px;
+}
+
+/* Efectos para hover */
+.box:hover {
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.3); /* Efecto resplandeciente al pasar el cursor */
+}
+
+
+.box.selected {
+    background-color: #28a745; /* Verde brillante cuando seleccionado */
+    transform: scale(1.05);
+}
+.box.deselected {
+    background-color: #d9534f; /* Marrón brillante cuando no seleccionado */
+    transform: scale(1.05);
+}
+
+/* ---------------------------CODIGO FIN DE FILTRADO -------------------**/
+
+
+/* --------------------------CODIGO INICIO DE CONTABILIDAD  -------------------**/
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 12px;
+}
+
+.parent > div {
+    padding: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    border: 3px solid #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parent > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Colores vivos */
+.totalVenta { background-color: #1a1a1a; border-color: white; }
+.totalDevoluciones { background-color: #1a1a1a; border-color: white; }
+.porventajeVentas { background-color: #1a1a1a; color: white; border-color: white; }
+.totalOperaciones { background-color: #1a1a1a; border-color: white; }
+.calendario { background-color: #1a1a1a; 
+        border-color: white; 
+        text-align: center;}
+
+#fecha-selector {
+    width: 100%;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder style */
+#fecha-selector::placeholder {
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.numero {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 900;
+}
+/* --------------------------CODIGO FIN DE CONTABILIDAD  -------------------**/
+
+
+/* --------------------------CODIGO INICIO DE METRICAS  -------------------**/
+
+
+
+.HistogramaVentas { grid-area: 2 / 1 / 4 / 5;
+    background-color: black; 
+}
+.listProductos { grid-area: 2 / 5 / 4 / 6; 
+    background-color: black;}
+
+details {
+    color: black;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 15px;
+}
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+li {
+    margin: 2px 0;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #121212; /* Color oscuro para mantener tu tema */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #444;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #00C49F; /* Color que coincide con tu gráfico */
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
