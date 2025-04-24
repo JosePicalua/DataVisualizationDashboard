@@ -103,6 +103,7 @@ def graficar_top_productos(category_code):
 
 # Inicializar app
 app = dash.Dash(__name__)
+server = app.server  # Esta línea es clave para Render
 
 # Categorías únicas
 categorias = df['Category Name'].unique()
