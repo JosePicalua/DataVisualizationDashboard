@@ -1,141 +1,110 @@
-## TITTLE
+📊 DashBoard de Análisis de Datos  
+Este repositorio contiene una aplicación interactiva construida con Plotly Dash para analizar y visualizar datos desde archivos CSV.
 
-// "From Data to Decisions: A Smart Sales Dashboard"
-// Supermarket Sales: Data Exploration and Visualization 📊
+Pantallazo Principal - Bienvenida
+¡Bienvenido al Dashboard de Análisis de Productos!
+Este panel ha sido diseñado para brindarte una visión completa y dinámica sobre el comportamiento de los productos en tu inventario, incluyendo ventas, devoluciones, historial anual y más. Al ingresar, verás un resumen general de todos los datos, sin necesidad de seleccionar filtros. Sin embargo, puedes acceder a vistas más detalladas utilizando las herramientas interactivas descritas a continuación.
 
+![Pantallazo Principal](principal.png)
 
-1. Análisis General de Ventas
-Preguntas:
 
-¿Cuál es el total de ventas por mes, por día o por semana?
+Estructura del Proyecto
+El proyecto está organizado de la siguiente manera:
 
-¿Cuáles son los productos que generan más ventas?
+appDahs.py: Archivo principal que configura y ejecuta la aplicación Dash.
 
-¿Cuál es la tendencia de ventas en el tiempo? ¿Las ventas aumentan o disminuyen en algún periodo específico?
+analyct.ipynb: Jupyter notebook que realiza análisis y limpieza de los datos.
 
-¿Hay días o meses específicos con mayores ventas (picos de ventas)?
+dataset/: Carpeta que contiene los archivos CSV con los datos.
 
-Gráficos sugeridos:
+assets/: Carpeta con archivos CSS y JavaScript opcionales para personalizar el diseño de Dash.
 
-Gráfico de barras o líneas de ventas por mes o por día.
+graficasV/: Entorno virtual donde se gestionan las dependencias.
 
-Heatmap para identificar los días con más ventas.
+README.md: Este archivo con la documentación del proyecto.
 
-Gráfico de barras con los productos más vendidos.
+requirements.txt: Archivo con las dependencias necesarias para ejecutar el proyecto.
 
-2. Desempeño de las Categorías de Productos
-Preguntas:
+Funcionalidades Interactivas
+Vista General y Detalles: El dashboard muestra un resumen general sin filtros al cargarlo, pero permite aplicar filtros a través de casillas de colores que interactúan entre sí.
 
-¿Cuál es la categoría de productos con mayor venta?
+Casilla Amarilla: Filtra productos por categoría, nombre o ID.
 
-¿Cómo se distribuyen las ventas entre diferentes categorías?
+Casilla Azul: Muestra estadísticas como ventas y devoluciones.
 
-¿Existen categorías que están perdiendo ventas o que están creciendo significativamente?
+Casilla Rosada: Permite filtrar por fechas.
 
-Gráficos sugeridos:
+Casilla Roja: Muestra un histograma del producto seleccionado, segmentado por año.
 
-Gráfico de barras o torta que muestra el desempeño de las categorías.
+Casilla Morada: Muestra funciones agrupadas, como los 10 productos más vendidos.
 
-Gráfico de dispersión para ver la relación entre categorías y ventas.
+Funciones del Dashboard
+Filtrado de Datos: Los usuarios pueden seleccionar diferentes categorías y productos desde un menú desplegable, lo que actualiza las gráficas y métricas que se muestran.
 
-3. Segmentación por Ubicación y Tienda
-Preguntas:
+Histograma de Ventas: El histograma muestra las ventas agrupadas por categorías, y se actualiza dinámicamente con base en las selecciones de los usuarios.
 
-¿Cómo se comparan las ventas entre las diferentes ubicaciones o sucursales del supermercado?
+Gráficas Detalladas: El dashboard también permite mostrar ventas por año para productos específicos, y los 10 productos más vendidos en una categoría dada.
 
-¿Qué tienda tiene el mejor desempeño en términos de ventas?
+Descripción del Código
+El código en el archivo appDahs.py crea un dashboard interactivo con las siguientes funcionalidades:
 
-¿Cuáles son los productos que se venden más en cada ubicación?
+Carga de Datos: Los datos se cargan desde archivos CSV utilizando pandas, y se realizan algunos cálculos previos, como la creación de una nueva columna de fecha.
 
-Gráficos sugeridos:
+Funciones para Graficar:
 
-Gráfico de barras que compare las ventas por tienda.
+graficar_histograma(): Muestra las ventas totales por categoría.
 
-Mapa interactivo de las ubicaciones y ventas (si tienes coordenadas geográficas).
+graficar_item_por_anio(item_code): Muestra las ventas por año para un producto específico.
 
-4. Segmentación de Clientes
-Preguntas:
+graficar_top_productos(category_code): Muestra los 10 productos más vendidos de una categoría.
 
-¿Cómo se comportan las ventas según el género o la edad de los clientes?
+Callbacks de Dash:
 
-¿Cuáles son los grupos de clientes más frecuentes en términos de volumen de ventas?
+Los callbacks permiten actualizar la interfaz de usuario en función de las interacciones de los usuarios, como la selección de categoría o producto.
 
-¿Qué tipo de productos prefieren los diferentes grupos de clientes?
+El modal de bienvenida se puede ocultar cuando el usuario hace clic en cualquier parte fuera del modal.
 
-Gráficos sugeridos:
+Requisitos y Ejecución
+Para ejecutar el proyecto, se deben cumplir los siguientes requisitos:
 
-Gráfico de barras o torta que muestre la distribución de ventas según género o edad.
+Python 3.8+
 
-Segmentación de clientes: Gráfico de barras o histogramas.
+pip
 
-5. Análisis de Precios y Descuentos
-Preguntas:
+Instalación:
 
-¿Cuál es la relación entre los descuentos ofrecidos y el aumento en las ventas?
+Clonar el repositorio:
+git clone https://github.com/tuusuario/tu-repo.git
 
-¿Los descuentos afectan de manera significativa las ventas de ciertos productos?
+Instalar las dependencias:
+pip install -r requirements.txt
 
-¿Qué productos tienen el mejor rendimiento cuando se aplican descuentos?
+Ejecutar el archivo principal:
+python appDahs.py
 
-Gráficos sugeridos:
 
-Gráfico de dispersión entre descuentos y ventas.
+🎨 2. Funciones según el color de cada casilla/cuadrícula
 
-Gráfico de barras para comparar ventas con y sin descuentos en productos clave.
+![Division de Cuadriculas de Funciones](division-funciones.png)
 
-6. Rentabilidad y Márgenes de Ganancia
-Preguntas:
 
-¿Cuál es la rentabilidad de los productos más vendidos?
+📊 2.1 Vista General y Detalles
+Al cargar el dashboard por primera vez, se mostrará un resumen total sin filtros aplicados.
 
-¿Cuáles son los productos que ofrecen el mayor margen de ganancia?
+Para acceder a información más específica, simplemente utiliza las casillas de colores para aplicar filtraciones según tus necesidades.
 
-¿Qué productos generan mayores ganancias, pero no necesariamente tienen un alto volumen de ventas?
+🟨 2.2 Casilla Amarilla: Filtrado de Productos
+Permite filtrar por categoría, nombre del producto o identificación.
 
-Gráficos sugeridos:
+Al hacer clic, activa interacciones con otras casillas:
 
-Gráfico de barras para comparar ventas y márgenes de ganancia por producto.
+🟦 Casilla Azul: Muestra estadísticas como cantidad de ventas, devoluciones y porcentajes relacionados.
 
-Gráfico de dispersión para ver la relación entre margen de ganancia y ventas.
+🌸 Casilla Rosada: Permite filtrar por fechas específicas para un análisis temporal.
 
-7. Análisis de Comportamiento del Cliente
-Preguntas:
+🔴 Casilla Roja: Despliega un histograma del producto seleccionado, segmentado por año.
 
-¿En qué momentos del día o de la semana los clientes realizan más compras?
+🟪 2.3 Casilla Morada: Funciones Agrupadas
+Despliega funciones agrupadas por categoría.
+Presenta un listado de los 10 productos más vendidos a lo largo de su existencia.
 
-¿Cuáles son las combinaciones de productos que más se compran juntas?
-
-¿Qué tipos de productos se venden más en eventos especiales o promociones?
-
-Gráficos sugeridos:
-
-Gráfico de líneas para ver la hora del día con más ventas.
-
-Gráfico de agrupación (barplot o heatmap) de productos comprados juntos frecuentemente.
-
-8. Pronóstico de Ventas
-Preguntas:
-
-¿Cuál será el comportamiento de las ventas en los próximos meses basados en las tendencias actuales?
-
-¿Qué productos tienen más probabilidades de seguir vendiéndose bien en el futuro?
-
-Gráficos sugeridos:
-
-Modelo de series temporales: Análisis y pronóstico de ventas futuras usando métodos como ARIMA, Prophet o LSTM.
-
-Gráfico de predicciones que muestre las ventas estimadas.
-
-
-
----------------------------------------------------
-🧑‍💼 Presentación para el Manager
-Con base en estos puntos, puedes preparar un dashboard interactivo en Streamlit o Dash, mostrando las visualizaciones de las preguntas clave que tu manager necesita responder. Aquí te dejo un resumen de los posibles elementos que incluirías:
-
-Gráficos interactivamente configurables: Permite elegir el periodo (mes, semana) y las categorías que desean analizar.
-
-Filtros dinámicos: Filtros por producto, ubicación, categoría, cliente, etc.
-
-Paneles de resumen: Muestra de manera destacada los productos más vendidos, las categorías con mayor rendimiento, las tiendas con mejor desempeño, y un pronóstico de ventas.
-
------------------------------------------------------
